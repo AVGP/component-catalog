@@ -1,0 +1,15 @@
+{
+  "name": "component-catalog",
+  "version": "1.0.0",
+  "description": "Renders an HTML catalog of available web components in a folder, including a description and a code sample.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Naumann",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "~0.10.2",
+    "mustache": "~0.8.2"
+  }
+}
