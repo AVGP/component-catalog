@@ -7,7 +7,7 @@ var watcher  = require('chokidar').watch(process.argv[2], {
   components = [];
 
 function ignoreFiles(path) {
-  var re = new RegExp("^[^/]+/[^/]+/.+$");
+  var re = new RegExp("^[^/]+/.+$");
   return !!re.test(path.replace(process.argv[2] + '/', ''));
 }
 
@@ -24,24 +24,15 @@ watcher.on('addDir', function(path) {
   if(path === process.argv[2]) return;
   console.log("Added", path);
 
-  if(fs.existsSync(path + '/sample')) {
-    console.log("Sample found")
-    var sample = fs.readFileSync(path + '/sample', 'utf8');
+  if(fs.existsSync(path + '/component.json')) {
+    try {
+      var component = JSON.parse(fs.readFileSync(path + '/component.json', 'utf8'));
+    } catch(e) {
+      var component = {name: path.replace(process.argv[2] + '/', '')};
+    }
   } else {
-    var sample = '';
+    var component = {name: path.replace(process.argv[2] + '/', '')};
   }
-
-  if(fs.existsSync(path + '/description')) {
-    var desc = fs.readFileSync(path + '/description', 'utf8');
-  } else {
-    var desc = ''
-  }
-
-  var component = {
-    name: path.replace(process.argv[2] + '/', ''),
-    sample: sample,
-    description: desc
-  };
 
   components.push(component);
   renderInventory(components);
