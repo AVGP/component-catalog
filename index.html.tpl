@@ -16,6 +16,8 @@
       text-align: center;
     }
 
+    h2 { margin: 0; }
+
     section { text-align: center; }
 
     article {
@@ -26,6 +28,8 @@
       width: 20em;
       height: 10em;
       padding: 1em;
+
+      word-wrap: break-word;
 
       box-shadow: 1px 1px 5px 1px rgb(100, 100, 100);
       box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.80);
@@ -39,7 +43,7 @@
     <article>
       <h2>{{name}}</h2>
       <p>{{description}}</p>
-      <pre>{{usage}}</pre>
+<pre>{{usage}}</pre>
       <p><a href="{{sampleFile}}">Demo</a> | <a href="{{links.repository}}">Repository</a> | <a href="{{links.documentation}}">Docs</a></p>
     </article>
     {{/components}}
