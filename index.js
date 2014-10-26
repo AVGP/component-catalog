@@ -27,10 +27,13 @@ watcher.on('addDir', function(path) {
   if(fs.existsSync(path + '/component.json')) {
     try {
       var component = JSON.parse(fs.readFileSync(path + '/component.json', 'utf8'));
+      console.log("Parsed component definition");
     } catch(e) {
+      console.log("Error parsing the component definition");
       var component = {name: path.replace(process.argv[2] + '/', '')};
     }
   } else {
+    console.log("No component definition, falling back");
     var component = {name: path.replace(process.argv[2] + '/', '')};
   }
 
