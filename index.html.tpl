@@ -48,7 +48,7 @@
 <pre>
 {{usage}}
 </pre>
-      <p><a href="{{sampleFile}}">Demo</a> | <a href="{{links.repository}}">Repository</a> | <a href="{{links.documentation}}">Docs</a></p>
+      <p><a href="{{links.demo}}">Demo</a> | <a href="{{links.repository}}">Repository</a> | <a href="{{links.documentation}}">Docs</a></p>
     </article>
     {{/components}}
   </section>
