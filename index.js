@@ -12,7 +12,7 @@ function ignoreFiles(path) {
 }
 
 function renderInventory(components) {
-  fs.readFile("index.html.tpl", "utf8", function(err, content) {
+  fs.readFile(__dirname + "/index.html.tpl", "utf8", function(err, content) {
     var output = mustache.render(content, {components: components});
     fs.writeFile(( process.argv[3] ? process.argv[3] + '/' : '') + "index.html", output, function() { console.log("Written"); });
   });
