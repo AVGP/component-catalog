@@ -34,6 +34,8 @@
       box-shadow: 1px 1px 5px 1px rgb(100, 100, 100);
       box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.80);
     }
+
+    a, a:visited { color: #C63D0F; }
   </style>
 </head>
 <body>
