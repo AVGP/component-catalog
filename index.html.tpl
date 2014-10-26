@@ -26,7 +26,7 @@
       color: white;
       margin: 2em;
       width: 20em;
-      height: 10em;
+      height: 15em;
       padding: 1em;
 
       word-wrap: break-word;
@@ -35,7 +35,7 @@
       box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.80);
     }
 
-    a, a:visited { color: #C63D0F; }
+    a, a:visited { color: #FDF3E7; }
   </style>
 </head>
 <body>
