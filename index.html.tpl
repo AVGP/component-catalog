@@ -18,19 +18,22 @@
 
     h2 { margin: 0; }
 
-    section { text-align: center; }
+    section {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
 
     article {
-      float: left;
       background: #0E8F8F;
       color: white;
-      margin: 2em;
+      margin: 1em auto;
       width: 20em;
       height: 15em;
       padding: 1em;
 
       word-wrap: break-word;
-
+      text-align: center;
       box-shadow: 1px 1px 5px 1px rgb(100, 100, 100);
       box-shadow: 1px 1px 5px 1px rgba(100, 100, 100, 0.80);
     }
