@@ -14,7 +14,13 @@ function ignoreFiles(path) {
 function renderInventory(components) {
   fs.readFile(__dirname + "/index.html.tpl", "utf8", function(err, content) {
     var output = mustache.render(content, {components: components});
-    fs.writeFile(( process.argv[3] ? process.argv[3] + '/' : '') + "index.html", output, function() { console.log("Written"); });
+    fs.writeFile(( process.argv[3] ? process.argv[3] + '/' : '') + "index.html", output, function(err) {
+      if(err) {
+        console.error(err);
+      } else {
+        console.log("Written");
+      }
+    });
   });
 }
 
@@ -30,11 +36,11 @@ watcher.on('addDir', function(path) {
       console.log("Parsed component definition");
     } catch(e) {
       console.log("Error parsing the component definition");
-      var component = {name: path.replace(process.argv[2] + '/', '')};
+      var component = {name: path.replace(process.argv[2] + '/', ''), links: {}};
     }
   } else {
     console.log("No component definition, falling back");
-    var component = {name: path.replace(process.argv[2] + '/', '')};
+    var component = {name: path.replace(process.argv[2] + '/', ''), links: {}};
   }
 
   components.push(component);
